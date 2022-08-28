@@ -7,7 +7,10 @@ import BlogContent from '../components/BlogContent.vue'
 
 <html>
   <head>
-    <!-- Add other Head elements here, like styles and meta tags. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title}</title>
   </head>
   <body>
@@ -21,24 +24,13 @@ import BlogContent from '../components/BlogContent.vue'
 </html>
 
 <style>
-  @font-face {
-    font-family: 'Quicksand';
-    src: url('/fonts/Quicksand/Quicksand-variable.tff') format('tff'),
-      url('/fonts/Quicksand/Quicksand-variable.woff') format('woff'),
-      url('/fonts/Quicksand/Quicksand-variable.woff2') format('woff2');
-  }
-
-  * {
-    font-family: 'Quicksand';
-  }
-
+  @import url('../style/global.css');
   html,
   body {
     height: 100vh;
   }
 
   body {
-    margin: 0;
     display: flex;
   }
 </style>
