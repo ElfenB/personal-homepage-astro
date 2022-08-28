@@ -1,0 +1,33 @@
+---
+// 1. The frontmatter prop gives access to frontmatter and other data
+const { frontmatter } = Astro.props
+---
+
+<html>
+  <head>
+    <!-- Add other Head elements here, like styles and meta tags. -->
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <h1>{frontmatter.title}</h1>
+    <slot />
+    <p>Written on: {frontmatter.date}</p>
+  </body>
+</html>
+
+<style>
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('/fonts/Quicksand/Quicksand-variable.tff') format('tff'),
+      url('/fonts/Quicksand/Quicksand-variable.woff') format('woff'),
+      url('/fonts/Quicksand/Quicksand-variable.woff2') format('woff2');
+  }
+
+  * {
+    font-family: 'Quicksand';
+  }
+
+  body {
+    margin: 0 20vw;
+  }
+</style>
