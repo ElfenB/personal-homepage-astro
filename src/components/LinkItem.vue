@@ -11,7 +11,7 @@ import type { Link } from './LinkTree.vue';
 defineProps<{ link: Link }>();
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .linkitem {
   width: 10rem;
   display: flex;

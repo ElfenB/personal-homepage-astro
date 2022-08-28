@@ -4,6 +4,10 @@ import LinkTree from '../components/LinkTree.vue'
 ---
 
 <Layout title="Home">
+  <a href="https://www.buymeacoffee.com/elfenben" class="bmc" target="_blank">
+    <!-- <img src="/img/bmc.png" alt="Buy me some coffee!" /> -->
+    <p>🍺</p>
+  </a>
   <h1>benjamin elfen.</h1>
   <LinkTree />
 </Layout>
@@ -11,7 +15,8 @@ import LinkTree from '../components/LinkTree.vue'
 <style scoped>
   @import url('../style/global.css');
 
-  html, body {
+  html,
+  body {
     height: 100vh;
   }
 
@@ -21,6 +26,22 @@ import LinkTree from '../components/LinkTree.vue'
     justify-content: center;
     align-items: center;
     background-color: aliceblue;
+  }
+
+  .bmc {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* .bmc img {
+    height: 2rem;
+  } */
+  .bmc p {
+    margin: 0;
+    font-size: 2rem;
   }
 
   @media only screen and (max-width: 600px) {
