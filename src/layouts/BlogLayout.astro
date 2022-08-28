@@ -4,7 +4,7 @@ const { frontmatter } = Astro.props
 import BlogNavBar from '../components/BlogNavBar.vue'
 import BlogContent from '../components/BlogContent.vue'
 import BlogHeader from '../components/BlogHeader.vue'
-import GetPosts from '@components/GetPosts.astro';
+import GetPosts from '@components/GetPosts.astro'
 ---
 
 <html lang="en">
@@ -17,11 +17,11 @@ import GetPosts from '@components/GetPosts.astro';
   </head>
   <body>
     <BlogHeader />
-    <div class="blogcontent">
+    <div class="layout">
       <BlogNavBar>
         <GetPosts />
       </BlogNavBar>
-      <BlogContent>
+      <BlogContent class="content">
         <h1>{frontmatter.title}</h1>
         <slot />
         <p class="date">Written on: {frontmatter.date}</p>
@@ -30,14 +30,14 @@ import GetPosts from '@components/GetPosts.astro';
   </body>
 </html>
 
-<style>
+<style scoped lang="scss">
   @import url('../style/global.css');
   html,
   body {
     min-height: calc(100vh - var(--blog-header-height));
   }
 
-  .blogcontent {
+  .layout {
     min-height: inherit;
     display: flex;
     flex-direction: row;
@@ -49,8 +49,18 @@ import GetPosts from '@components/GetPosts.astro';
   }
 
   @media only screen and (max-width: 600px) {
-    .blogcontent {
+    .layout {
       flex-direction: column;
+    }
+  }
+
+  .content {
+    & h1 {
+      border-bottom: 1px solid var(--text);
+    }
+
+    img {
+      width: 50vw;
     }
   }
 </style>

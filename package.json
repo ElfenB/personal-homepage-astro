@@ -28,5 +28,8 @@
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.4.8"
+  }
 }
