@@ -14,7 +14,7 @@
   border-right: 1px solid rgba(128, 128, 128, 0.2);
   min-width: fit-content;
   background: var(--primary);
-  filter: brightness(80%);
+  filter: brightness(95%);
 }
 
 @media (prefers-color-scheme: dark) {

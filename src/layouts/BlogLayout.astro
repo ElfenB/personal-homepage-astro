@@ -21,7 +21,7 @@ import GetPosts from '@components/GetPosts.astro'
       <BlogNavBar>
         <GetPosts />
       </BlogNavBar>
-      <BlogContent class="content">
+      <BlogContent class="contentpart">
         <h1>{frontmatter.title}</h1>
         <slot />
         <p class="date">Written on: {frontmatter.date}</p>
@@ -54,13 +54,10 @@ import GetPosts from '@components/GetPosts.astro'
     }
   }
 
-  .content {
+  .contentpart {
     & h1 {
+      width: 100%;
       border-bottom: 1px solid var(--text);
-    }
-
-    img {
-      width: 50vw;
     }
   }
 </style>

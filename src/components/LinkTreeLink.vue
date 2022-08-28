@@ -17,9 +17,10 @@ a {
   text-decoration: none;
   color: inherit;
   margin: auto 0;
+  transition: transform .1s ease;
 
   &:hover {
-    filter: brightness(90%);
+    transform: scale(102%);
   }
 }
 </style>

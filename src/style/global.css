@@ -5,7 +5,6 @@
   --header-bg: hsl(203, 60%, 61%);
 
   --blog-header-height: 5rem;
-  --content-padding: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
