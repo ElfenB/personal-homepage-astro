@@ -1,6 +1,8 @@
 ---
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props
+import NavBar from '../components/NavBar.vue'
+import BlogContent from '../components/BlogContent.vue'
 ---
 
 <html>
@@ -9,9 +11,12 @@ const { frontmatter } = Astro.props
     <title>{frontmatter.title}</title>
   </head>
   <body>
-    <h1>{frontmatter.title}</h1>
-    <slot />
-    <p>Written on: {frontmatter.date}</p>
+    <NavBar />
+    <BlogContent>
+      <h1>{frontmatter.title}</h1>
+      <slot />
+      <p>Written on: {frontmatter.date}</p>
+    </BlogContent>
   </body>
 </html>
 
@@ -27,7 +32,13 @@ const { frontmatter } = Astro.props
     font-family: 'Quicksand';
   }
 
+  html,
   body {
-    margin: 0 20vw;
+    height: 100vh;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
   }
 </style>
