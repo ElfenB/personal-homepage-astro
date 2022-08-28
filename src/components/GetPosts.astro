@@ -1,0 +1,33 @@
+---
+const posts = await Astro.glob('../pages/blog/*.md')
+---
+
+<div>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={'/blog/' + post.frontmatter.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style scoped lang="scss">
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: var(--link);
+    font-size: 0.9rem;
+    margin-left: 0.5em;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+</style>

@@ -1,12 +1,13 @@
 <template>
-  <a class="linkitem" :href="link.to" target="_blank">
+  <LinkTreeLink class="linkitem" :to="link.to">
     <img :src="link.icon" :alt="link.name">
     <p>{{ link.name }}</p>
-  </a>
+  </LinkTreeLink>
 </template>
 
 <script setup lang='ts'>
-import type { Link } from './LinkTree.vue';
+import type { Link } from '../data/linktree';
+import LinkTreeLink from './LinkTreeLink.vue';
 
 defineProps<{ link: Link }>();
 </script>
@@ -17,8 +18,6 @@ defineProps<{ link: Link }>();
   display: flex;
   flex-direction: column;
   text-align: center;
-  text-decoration: none;
-  color: inherit;
 }
 
 img {

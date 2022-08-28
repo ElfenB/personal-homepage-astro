@@ -5,31 +5,9 @@
 </template>
 
 <script setup lang='ts'>
-export interface Link {
-  name: string,
-  to: string,
-  icon: string
-}
-
 import LinkItem from './LinkItem.vue';
 
-const links: Link[] = [
-  {
-    name: 'Photography',
-    to: 'https://www.instagram.com/ben_clickclick',
-    icon: '/img/instagram.svg'
-  },
-  {
-    name: 'Blog',
-    to: '/blog',
-    icon: '/img/blog.svg'
-  },
-  {
-    name: 'Coding',
-    to: 'https://www.github.com/ElfenB',
-    icon: '/img/github.svg'
-  },
-]
+import { links } from 'src/data/linktree';
 </script>
 
 <style scoped>
@@ -40,7 +18,7 @@ const links: Link[] = [
 
 @media only screen and (max-width: 600px) {
   .main {
-    height: 100vh;
+    min-height: 70vh;
     flex-direction: column;
     justify-content: space-evenly;
   }

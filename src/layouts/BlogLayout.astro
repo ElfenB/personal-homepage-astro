@@ -1,11 +1,13 @@
 ---
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { frontmatter } = Astro.props
-import NavBar from '../components/NavBar.vue'
+import BlogNavBar from '../components/BlogNavBar.vue'
 import BlogContent from '../components/BlogContent.vue'
+import BlogHeader from '../components/BlogHeader.vue'
+import GetPosts from '@components/GetPosts.astro';
 ---
 
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -14,12 +16,17 @@ import BlogContent from '../components/BlogContent.vue'
     <title>{frontmatter.title}</title>
   </head>
   <body>
-    <NavBar />
-    <BlogContent>
-      <h1>{frontmatter.title}</h1>
-      <slot />
-      <p>Written on: {frontmatter.date}</p>
-    </BlogContent>
+    <BlogHeader />
+    <div class="blogcontent">
+      <BlogNavBar>
+        <GetPosts />
+      </BlogNavBar>
+      <BlogContent>
+        <h1>{frontmatter.title}</h1>
+        <slot />
+        <p class="date">Written on: {frontmatter.date}</p>
+      </BlogContent>
+    </div>
   </body>
 </html>
 
@@ -27,10 +34,23 @@ import BlogContent from '../components/BlogContent.vue'
   @import url('../style/global.css');
   html,
   body {
-    height: 100vh;
+    min-height: calc(100vh - var(--blog-header-height));
   }
 
-  body {
+  .blogcontent {
+    min-height: inherit;
     display: flex;
+    flex-direction: row;
+  }
+
+  .date {
+    font-size: small;
+    color: rgb(184, 184, 184);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .blogcontent {
+      flex-direction: column;
+    }
   }
 </style>

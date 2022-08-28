@@ -12,12 +12,12 @@ import LinkTree from '../components/LinkTree.vue'
   <LinkTree />
 </Layout>
 
-<style scoped>
+<style scoped lang="scss">
   @import url('../style/global.css');
 
   html,
   body {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   body {
@@ -28,12 +28,23 @@ import LinkTree from '../components/LinkTree.vue'
     background-color: aliceblue;
   }
 
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--primary);
+    }
+  }
+
   .bmc {
     position: absolute;
     top: 1rem;
     right: 1rem;
     text-decoration: none;
     color: inherit;
+    transition: transform .5s ease-in;
+
+    &:hover {
+      transform: rotate(-60deg);
+    }
   }
 
   /* .bmc img {
