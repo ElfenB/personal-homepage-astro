@@ -6,4 +6,4 @@ date: 28.08.2022
 layout: ../../layouts/BlogLayout.astro
 ---
 
-Building a blog with astro.
+Building a blog with astro. I just started.
