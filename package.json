@@ -14,11 +14,13 @@
     "pretest": "npm run lint"
   },
   "devDependencies": {
+    "@astrojs/vue": "^1.0.0",
     "astro": "^1.1.1",
     "eslint": "^8.23.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "vue": "^3.2.37"
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
