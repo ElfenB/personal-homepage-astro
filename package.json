@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@astrojs/vue": "^1.0.0",
+    "@vitejs/plugin-vue": "^3.0.3",
     "astro": "^1.1.1",
     "eslint": "^8.23.0",
     "husky": "^8.0.1",
