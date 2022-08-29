@@ -40,7 +40,7 @@ jobs:
           name: my_artifact_name # Download artifact named `my_artifact_name` (matches build step: Upload bundle)
           path: dist # Optional, downloads to current working directory under folder {artifact_name} if not specified
       - name: Debug Files
-        run: ls
+        run: tree dist
       - name: Upload to FTP
         uses: isthatcentered/dist-to-ftp@master
         with:
