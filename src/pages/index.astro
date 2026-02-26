@@ -1,72 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import LinkTree from '../components/LinkTree.vue'
+import LinkTree from '../components/LinkTree.astro';
+import Stack from '../components/Stack.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Home">
-  <a href="https://www.buymeacoffee.com/elfenben" class="bmc" target="_blank">
-    <!-- <img src="/img/bmc.png" alt="Buy me some coffee!" /> -->
-    <p>🍺</p>
-  </a>
-  <h1>benjamin elfen.</h1>
-  <LinkTree />
+<Layout>
+  <Stack style={{ height: '100%' }}>
+    <h1>benelfen.</h1>
+
+    <LinkTree />
+  </Stack>
 </Layout>
-
-<style scoped lang="scss">
-  @import url('../style/global.css');
-
-  html,
-  body {
-    min-height: 100vh;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--primary);
-    }
-  }
-
-  .bmc {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    text-decoration: none;
-    color: inherit;
-    transition: transform .5s ease-in;
-
-    &:hover {
-      transform: rotate(-60deg);
-    }
-  }
-
-  /* .bmc img {
-    height: 2rem;
-  } */
-  .bmc p {
-    margin: 0;
-    font-size: 2rem;
-  }
-
-  @media only screen and (max-width: 600px) {
-    body {
-      justify-content: flex-start;
-    }
-
-    h1 {
-      padding-top: 3rem;
-    }
-  }
-
-  h1 {
-    font-weight: bold;
-    padding-bottom: 5vh;
-  }
-</style>
