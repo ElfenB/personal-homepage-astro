@@ -9,7 +9,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --fix .",
+    "check-types": "tsc --noEmit --pretty",
+    "lint": "npm run check-types && eslint .",
+    "lint:fix": "eslint --fix .",
     "prettier": "prettier --write --ignore-unknown .",
     "format": "npm run prettier && npm run lint"
   },
