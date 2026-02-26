@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "repair": "npx --yes rimraf@6 .next node_modules package-lock.json && npm install",
     "predev": "npm install",
     "dev": "astro dev",
-    "prebuild": "npm ci",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@boehringer-ingelheim/eslint-config": "^9.4.0",
     "@boehringer-ingelheim/prettier-config": "^2.0.0",
-    "eslint": "^10.0.2",
+    "eslint": "^9.39.3",
     "eslint-import-resolver-typescript": "^4.4.4",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",

@@ -1,0 +1,13 @@
+---
+import gitHubIcon from '../assets/icons/github-brands-solid-full.svg';
+import linkedInIcon from '../assets/icons/linkedin-brands-solid-full.svg';
+import IconLink from './IconLink.astro';
+
+const GITHUB_URL = 'https://github.com/ElfenB';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/benjamin-elfen';
+---
+
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem;">
+  <IconLink icon={gitHubIcon} alt="GitHub" href={GITHUB_URL} />
+  <IconLink icon={linkedInIcon} alt="LinkedIn" href={LINKEDIN_URL} />
+</div>
