@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import manropeFontUrl from '../assets/fonts/Manrope-VariableFont_wght.ttf?url';
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import '../styles/global.css';
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" href={manropeFontUrl} as="font" type="font/ttf" crossorigin />
 
     <meta name="generator" content={Astro.generator} />
 
