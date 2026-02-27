@@ -1,12 +1,11 @@
 ---
-import { CssProperties } from 'astro/dist/assets/fonts/types';
-import { SvgComponent } from 'astro/types';
-import { Image } from 'astro:assets';
+import type { SvgComponent } from 'astro/types';
+import { Picture } from 'astro:assets';
 
 interface Props {
   icon: SvgComponent & ImageMetadata;
   alt: string;
-  style?: CssProperties;
+  style?: astroHTML.JSX.CSSProperties;
   href?: string;
 }
 
@@ -14,5 +13,12 @@ const { icon, alt, style, href } = Astro.props;
 ---
 
 <a href={href} target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-  <Image src={icon} alt={alt} style={{ ...style, width: '15vh', height: '15vh' }} />
+  <Picture
+    src={icon}
+    alt={alt}
+    loading="lazy"
+    fetchpriority="auto"
+    decoding="async"
+    style={{ ...style, width: '15vh', height: '15vh' }}
+  />
 </a>
