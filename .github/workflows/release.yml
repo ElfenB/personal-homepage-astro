@@ -67,5 +67,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
-          server-dir: htdocs/next/
+          server-dir: htdocs/
           log-level: standard
