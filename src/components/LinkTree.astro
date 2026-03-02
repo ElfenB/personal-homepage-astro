@@ -1,13 +1,26 @@
 ---
 import gitHubIcon from '../assets/icons/github-brands-solid-full.svg';
 import linkedInIcon from '../assets/icons/linkedin-brands-solid-full.svg';
+import cubeIcon from '../assets/icons/cube-solid-full.svg';
 import IconLink from './IconLink.astro';
+import Stack from './Stack.astro';
 
 const GITHUB_URL = 'https://github.com/ElfenB';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/benjamin-elfen';
+const THINGIVERSE_URL = 'https://www.thingiverse.com/ElfenB';
 ---
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem;">
+<style>
+  @media (max-width: 600px) {
+    .linktree {
+      /* Have to use important here to override inline styles inside the Stack component */
+      flex-direction: column !important;
+    }
+  }
+</style>
+
+<Stack className="linktree" direction="row" justifyContent="space-between" alignItems="center" gap={1}>
   <IconLink icon={gitHubIcon} alt="My GitHub profile" href={GITHUB_URL} />
   <IconLink icon={linkedInIcon} alt="My LinkedIn profile" href={LINKEDIN_URL} />
-</div>
+  <IconLink icon={cubeIcon} alt="My Thingiverse profile" href={THINGIVERSE_URL} />
+</Stack>

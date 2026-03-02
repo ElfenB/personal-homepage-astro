@@ -1,25 +1,26 @@
 ---
-import { CssProperties } from 'astro/dist/assets/fonts/types';
-
 interface Props {
+  className?: string;
   direction?: 'row' | 'column';
   justifyContent?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
   alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
   gap?: number;
-  style?: CssProperties;
+  style?: astroHTML.JSX.CSSProperties;
 }
 
-const { direction, justifyContent, alignItems, gap, style } = Astro.props;
+const { direction, justifyContent, alignItems, gap, style, className, ...rest } = Astro.props;
 ---
 
 <div
+  {...rest}
+  class={className}
   style={{
-    ...style,
     display: 'flex',
     flexDirection: direction || 'column',
     justifyContent: justifyContent || 'center',
     alignItems: alignItems || 'center',
     gap: gap ? `${gap}rem` : undefined,
+    ...style,
   }}
 >
   <slot />
