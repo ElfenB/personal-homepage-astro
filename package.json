@@ -13,7 +13,7 @@
     "lint": "npm run check-types && eslint .",
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --write --ignore-unknown .",
-    "format": "npm run prettier && npm run lint"
+    "format": "npm run prettier && npm run lint:fix"
   },
   "dependencies": {
     "astro": "^6.1.3"
