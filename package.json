@@ -16,7 +16,7 @@
     "format": "npm run prettier && npm run lint:fix"
   },
   "dependencies": {
-    "astro": "^6.1.9"
+    "astro": "^6.2.1"
   },
   "devDependencies": {
     "@boehringer-ingelheim/eslint-config": "9.4.0",
