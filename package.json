@@ -19,7 +19,7 @@
     "astro": "^6.3.1"
   },
   "devDependencies": {
-    "@boehringer-ingelheim/eslint-config": "9.4.0",
+    "@boehringer-ingelheim/eslint-config": "9.5.0",
     "@boehringer-ingelheim/prettier-config": "2.0.0",
     "eslint": "9.39.3",
     "eslint-import-resolver-typescript": "4.4.4",
